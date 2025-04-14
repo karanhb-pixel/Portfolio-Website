@@ -16,17 +16,19 @@
 }
 
 .form-group label {
-  font-weight:500;
-  color: var(--dark-color);
+  font-weight: 500;
+  color: var(--text-color);
 }
 
 .form-group input,
 .form-group textarea {
   padding: 0.8rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border-color);
   border-radius: 5px;
   font-family: inherit;
   font-size: 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   transition: border-color 0.3s ease;
 }
 
