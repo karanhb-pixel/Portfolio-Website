@@ -1,0 +1,141 @@
+.about-hero {
+  padding: 5rem 0;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-image {
+  text-align: center;
+}
+
+.about-image img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--dark-color);
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: #ddd;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin-left: 30px;
+}
+
+.timeline-item {
+  padding: 0 0 2.5rem 80px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  border: 4px solid white;
+  left: 22px;
+  top: 0;
+  z-index: 1;
+}
+
+.timeline-content {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--dark-color);
+}
+
+.timeline-content h4 {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.timeline-period {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 992px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .about-image {
+    margin-bottom: 2rem;
+  }
+  
+  .resume-btn {
+    margin: 1rem auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline::after {
+    left: 20px;
+  }
+  
+  .timeline-item {
+    padding-left: 60px;
+  }
+  
+  .timeline-item::before {
+    left: 12px;
+  }
+}
