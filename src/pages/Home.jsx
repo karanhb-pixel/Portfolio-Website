@@ -14,7 +14,7 @@ const Home = () => {
       title: "Minimalist To-Do List Application",
       description:
         "A personal project to build a functional to-do list application. This web app allows users to manage their daily tasks efficiently through an intuitive interface, enabling them to add, modify, and track the completion of their activities.",
-      image: "/images/TodoList.jpg",
+      image: "images/TodoList-1.jpg",
       technologies: ["React", "Node.js", "MySql", "express"],
       githubLink: "https://github.com/karanhb-pixel/TODOList.git",
       liveLink: "https://example.com/",
