@@ -7,12 +7,7 @@ import {
   FaNodeJs,
   FaGitAlt,
 } from "react-icons/fa";
-import {
-  SiTypescript,
-  SiTailwindcss,
-  SiFigma,
-  SiAdobexd,
-} from "react-icons/si";
+import { SiFigma } from "react-icons/si";
 import "../styles/Skills.css";
 
 const Skills = () => {
