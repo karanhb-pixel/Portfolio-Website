@@ -23,7 +23,7 @@ const Projects = () => {
       image: "images/student_table-1.jpg",
       technologies: ["React", "Node.js", "PostgreSQL", "Express.js"],
       githubLink: "https://github.com/karanhb-pixel/Student_table.git",
-      liveLink: "https://example.com/",
+      liveLink: "https://student-table-withcrud.netlify.app/",
       category: "web",
     },
     {
