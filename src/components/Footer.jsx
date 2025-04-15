@@ -1,57 +1,83 @@
-import React from 'react'
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa'
-import '../styles/Footer.css'
+import React from "react";
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { PORTFOLIO_CONFIG, SOCIAL_LINKS } from "../config/constants";
+import "../styles/Footer.css";
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="footer">
       <div className="container footer-container">
         <div className="footer-content">
           <div className="footer-logo">
-            <h2>John Doe</h2>
-            <p>Web Developer & Designer</p>
+            <h2>{PORTFOLIO_CONFIG.name}</h2>
+            <p>{PORTFOLIO_CONFIG.role}</p>
           </div>
-          
+
           <div className="footer-links">
             <h3>Quick Links</h3>
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/projects">Projects</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/about">About</a>
+              </li>
+              <li>
+                <a href="/projects">Projects</a>
+              </li>
+              <li>
+                <a href="/contact">Contact</a>
+              </li>
             </ul>
           </div>
-          
+
           <div className="footer-contact">
             <h3>Contact Info</h3>
-            <p>Email: john.doe@example.com</p>
-            <p>Location: New York, USA</p>
+            <p>Email: {PORTFOLIO_CONFIG.email}</p>
+            <p>Location: {PORTFOLIO_CONFIG.location}</p>
           </div>
         </div>
-        
+
         <div className="footer-social">
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <a
+            href={SOCIAL_LINKS.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
             <FaGithub />
           </a>
-          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a
+            href={SOCIAL_LINKS.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
             <FaLinkedin />
           </a>
-          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+          <a
+            href={SOCIAL_LINKS.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+          >
             <FaTwitter />
           </a>
-          <a href="mailto:john.doe@example.com" aria-label="Email">
+          <a href={SOCIAL_LINKS.email} aria-label="Email">
             <FaEnvelope />
           </a>
         </div>
-        
+
         <div className="footer-bottom">
-          <p>&copy; {currentYear} John Doe. All Rights Reserved.</p>
+          <p>
+            &copy; {currentYear} {PORTFOLIO_CONFIG.name}. All Rights Reserved.
+          </p>
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

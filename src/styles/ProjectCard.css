@@ -1,8 +1,8 @@
 .project-card {
-  background-color: white;
+  background-color: var(--card-bg);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px var(--shadow-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -34,11 +34,11 @@
 .project-title {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  color: var(--dark-color);
+  color: var(--text-color);
 }
 
 .project-description {
-  color: #666;
+  color: var(--secondary-color);
   margin-bottom: 1rem;
   line-height: 1.5;
 }
@@ -51,12 +51,13 @@
 }
 
 .tech-tag {
-  background-color: #f0f0f0;
-  color: #555;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   padding: 0.3rem 0.6rem;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 500;
+  border: 1px solid var(--border-color);
 }
 
 .project-links {

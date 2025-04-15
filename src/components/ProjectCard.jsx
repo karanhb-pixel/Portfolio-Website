@@ -1,9 +1,11 @@
-import React from 'react'
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
-import '../styles/ProjectCard.css'
+import React from "react";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { PROJECT_LINKS } from "../config/constants";
+import "../styles/ProjectCard.css";
 
 const ProjectCard = ({ project }) => {
-  const { title, description, image, technologies, githubLink, liveLink } = project
+  const { title, description, image, technologies, githubLink, liveLink } =
+    project;
 
   return (
     <article className="project-card">
@@ -15,20 +17,32 @@ const ProjectCard = ({ project }) => {
         <p className="project-description">{description}</p>
         <div className="project-tech">
           {technologies.map((tech, index) => (
-            <span key={index} className="tech-tag">{tech}</span>
+            <span key={index} className="tech-tag">
+              {tech}
+            </span>
           ))}
         </div>
         <div className="project-links">
-          <a href={githubLink} target="_blank" rel="noopener noreferrer" className="project-link">
+          <a
+            href={githubLink || PROJECT_LINKS.repository}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
             <FaGithub /> Code
           </a>
-          <a href={liveLink} target="_blank" rel="noopener noreferrer" className="project-link">
+          <a
+            href={liveLink || PROJECT_LINKS.live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
             <FaExternalLinkAlt /> Live Demo
           </a>
         </div>
       </div>
     </article>
-  )
-}
+  );
+};
 
-export default ProjectCard
+export default ProjectCard;

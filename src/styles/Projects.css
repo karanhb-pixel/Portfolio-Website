@@ -1,5 +1,5 @@
 .projects-hero {
-  background-color: #f9f9f9;
+  background-color: var(--bg-color);
   text-align: center;
   padding: 5rem 0 3rem;
 }
@@ -7,13 +7,13 @@
 .page-title {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: var(--dark-color);
+  color: var(--text-color);
 }
 
 .page-description {
   max-width: 700px;
   margin: 0 auto 3rem;
-  color: #555;
+  color: var(--secondary-color);
   font-size: 1.1rem;
 }
 
@@ -56,11 +56,11 @@
   .page-title {
     font-size: 2.5rem;
   }
-  
+
   .project-filters {
     flex-wrap: wrap;
   }
-  
+
   .filter-btn {
     flex: 1 0 auto;
   }

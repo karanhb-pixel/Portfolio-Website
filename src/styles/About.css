@@ -1,5 +1,6 @@
 .about-hero {
   padding: 5rem 0;
+  background-color: var(--bg-color);
 }
 
 .about-content {
@@ -18,19 +19,19 @@
   height: 300px;
   object-fit: cover;
   border-radius: 50%;
-  border: 5px solid white;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 5px solid var(--card-bg);
+  box-shadow: 0 10px 30px var(--shadow-color);
 }
 
 .about-text h1 {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: var(--dark-color);
+  color: var(--text-color);
 }
 
 .about-text p {
   margin-bottom: 1.5rem;
-  color: #555;
+  color: var(--secondary-color);
   line-height: 1.7;
 }
 
@@ -49,10 +50,10 @@
 }
 
 .timeline::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 2px;
-  background-color: #ddd;
+  background-color: var(--border-color);
   top: 0;
   bottom: 0;
   left: 0;
@@ -65,29 +66,29 @@
 }
 
 .timeline-item::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: var(--primary-color);
-  border: 4px solid white;
+  border: 4px solid var(--card-bg);
   left: 22px;
   top: 0;
   z-index: 1;
 }
 
 .timeline-content {
-  background-color: white;
+  background-color: var(--card-bg);
   padding: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px var(--shadow-color);
 }
 
 .timeline-content h3 {
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
-  color: var(--dark-color);
+  color: var(--text-color);
 }
 
 .timeline-content h4 {
@@ -98,7 +99,7 @@
 
 .timeline-period {
   font-size: 0.9rem;
-  color: #777;
+  color: var(--secondary-color);
   margin-bottom: 1rem;
   font-weight: 500;
 }
@@ -116,11 +117,11 @@
     grid-template-columns: 1fr;
     text-align: center;
   }
-  
+
   .about-image {
     margin-bottom: 2rem;
   }
-  
+
   .resume-btn {
     margin: 1rem auto;
   }
@@ -130,11 +131,11 @@
   .timeline::after {
     left: 20px;
   }
-  
+
   .timeline-item {
     padding-left: 60px;
   }
-  
+
   .timeline-item::before {
     left: 12px;
   }

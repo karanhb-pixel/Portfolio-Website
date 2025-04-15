@@ -1,12 +1,52 @@
+:root[data-theme="light"] {
+  --primary-color: #4a6cf7;
+  --secondary-color: #6c757d;
+  --dark-color: #212529;
+  --light-color: #f8f9fa;
+  --bg-color: #ffffff;
+  --text-color: #212529;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --border-color: #ddd;
+  --card-bg: white;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --footer-bg: #1a1a1a;
+  --footer-text: #ccc;
+}
+
+:root[data-theme="dark"] {
+  --primary-color: #4a6cf7;
+  --secondary-color: #9ca3af;
+  --dark-color: #e5e7eb;
+  --light-color: #1a1a1a;
+  --bg-color: #121212;
+  --text-color: #e5e7eb;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --border-color: #2d2d2d;
+  --card-bg: #1f1f1f;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --footer-bg: #0a0a0a;
+  --footer-text: #9ca3af;
+}
+
+/* Set default theme */
 :root {
   --primary-color: #4a6cf7;
   --secondary-color: #6c757d;
   --dark-color: #212529;
   --light-color: #f8f9fa;
+  --bg-color: #ffffff;
+  --text-color: #212529;
   --success-color: #28a745;
   --danger-color: #dc3545;
-  --font-primary: 'Poppins', sans-serif;
-  --font-secondary: 'Roboto', sans-serif;
+  --border-color: #ddd;
+  --card-bg: white;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --footer-bg: #1a1a1a;
+  --footer-text: #ccc;
+  --font-primary: "Poppins", sans-serif;
+  --font-secondary: "Roboto", sans-serif;
 }
 
 * {
@@ -18,8 +58,9 @@
 body {
   font-family: var(--font-primary);
   line-height: 1.6;
-  color: var(--dark-color);
-  background-color: var(--light-color);
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -90,7 +131,7 @@ img {
   .section {
     padding: 3rem 0;
   }
-  
+
   .section-title {
     font-size: 2rem;
   }
