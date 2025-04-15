@@ -22,13 +22,14 @@ const Home = () => {
     },
     {
       id: 2,
-      title: "Travel Planner App",
+      title: "Dynamic Student Record Display",
       description:
-        "A mobile-responsive web application that helps users plan their trips with itinerary management and location suggestions.",
-      image: "/images/project2.jpg",
-      technologies: ["React", "Firebase", "Google Maps API", "Tailwind CSS"],
-      githubLink: "https://github.com/",
+        "This project implements a dynamic student table using web technologies. It offers a way to display student data in a clean and potentially interactive manner.",
+      image: "images/student_table-1.jpg",
+      technologies: ["React", "Node.js", "PostgreSQL", "Express.js"],
+      githubLink: "https://github.com/karanhb-pixel/Student_table.git",
       liveLink: "https://example.com/",
+      category: "web",
     },
     {
       id: 3,
