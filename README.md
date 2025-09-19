@@ -55,19 +55,19 @@ A personal portfolio website to showcase your projects, skills, and experiences.
 
 ## Screenshots
 
-Below are screenshots of the main pages of the Portfolio Website. All images are stored in the `public/readMe_images` folder.
+Below are screenshots of the main pages of the Portfolio Website. All images are stored in the `public/ReadMe_images` folder.
 
 ### Home Page
-![Home Page](public/readMe_images/home.jpeg)
+![Home Page](public/ReadMe_images/home.jpeg)
 
 ### About Page
-![About Page](public/readMe_images/about.jpeg)
+![About Page](public/ReadMe_images/about.jpeg)
 
 ### Projects Page
-![Projects Page](public/readMe_images/projects.jpeg)
+![Projects Page](public/ReadMe_images/projects.jpeg)
 
 ### Contact Page
-![Contact Page](public/readMe_images/contact.jpeg)
+![Contact Page](public/ReadMe_images/contact.jpeg)
 
 ## Contributing
 
