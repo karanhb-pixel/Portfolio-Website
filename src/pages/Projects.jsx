@@ -48,6 +48,28 @@ const Projects = () => {
       liveLink: "https://nextjs-dashboard-nine-kappa-38.vercel.app/",
       category: "web",
     },
+    {
+      id: 5,
+      title: "1Cable Network - React + Vite (Headless WordPress)",
+      description:
+        "1Cable Network is a headless WordPress application with a React (Vite) frontend for managing WiFi and OTT plans, users, and related workflows. The frontend consumes APIs and emphasizes performance, resilience, and modern UX.",
+      image: "/images/1Cable-Network_HomePage.jpeg",
+      technologies: ["ReactJs", "Axios", "Formik + Yup", "Mysql","Wordpress"],
+      githubLink: "https://github.com/karanhb-pixel/1cable-network.git",
+      liveLink: "http://1cable-network.infy.uk",
+      category: "web",
+    },
+    {
+      id: 6,
+      title: "Game Dev Landing Page",
+      description:
+        "This application is a single-page website designed to promote and enroll users in a comprehensive Game Development course. It features sections including a hero section, course listings, testimonials, app download prompts, and a footer. The site is optimized for performance with lazy loading and includes SEO enhancements like a robots.txt file.",
+      image: "/images/GameDev_homepage.jpeg",
+      technologies: ["ReactJs", "TypeScript", "Vite", "CSS(with Custom Styles)","ESLint","Lazy Loading"],
+      githubLink: "https://github.com/karanhb-pixel/figmaSite/tree/6e9a4232f88f5f678e8855e7f00ae750de7ed7c1/vite-project",
+      liveLink: "http://1cable-network.infy.uk",
+      category: "web",
+    },
   ];
 
   const [filter, setFilter] = useState("all");
