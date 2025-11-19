@@ -102,8 +102,22 @@ export const fetchProjects = async () => {
       return FALLBACK_PROJECTS;
     }
 
+    // First check if the content type exists by fetching content types
+    try {
+      const contentTypes = await client.getContentTypes();
+      const portfolioContentType = contentTypes.items.find(ct => ct.sys.id === 'portfolio');
+      
+      if (!portfolioContentType) {
+        console.log('Content type "portfolio" not found in Contentful, using fallback data');
+        return FALLBACK_PROJECTS;
+      }
+    } catch (ctError) {
+      console.log('Unable to verify content types, using fallback data:', ctError.message);
+      return FALLBACK_PROJECTS;
+    }
+
     const response = await client.getEntries({
-      content_type: 'project',
+      content_type: 'portfolio',
       order: '-sys.createdAt',
     });
     return response.items.map(item => ({
@@ -117,7 +131,12 @@ export const fetchProjects = async () => {
       category: item.fields.category || 'web',
     }));
   } catch (error) {
-    console.error('Error fetching projects from Contentful:', error);
+    // Check if it's specifically the unknown content type error
+    if (error.message && error.message.includes('unknownContentType')) {
+      console.log('Content type "portfolio" does not exist in Contentful, using fallback data');
+    } else {
+      console.error('Error fetching projects from Contentful:', error);
+    }
     console.log('Falling back to local projects data');
     return FALLBACK_PROJECTS;
   }
