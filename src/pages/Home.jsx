@@ -36,10 +36,11 @@ const Home = () => {
       title: "Portfolio Website",
       description:
         "A modern, responsive portfolio website template for developers and designers to showcase their work.",
-      image: "/images/project3.jpg",
-      technologies: ["HTML5", "CSS3", "JavaScript", "GSAP"],
-      githubLink: "https://github.com/",
-      liveLink: "https://example.com/",
+      image: "/images/portfoliyo-website-1.jpg",
+      technologies: ["HTML5", "CSS3", "JavaScript", "ReactJs"],
+      githubLink: "https://github.com/karanhb-pixel/Portfolio-Website.git",
+      liveLink: "https://karanbhanushali-portfolio.netlify.app/",
+      category: "web",
     },
   ];
 
