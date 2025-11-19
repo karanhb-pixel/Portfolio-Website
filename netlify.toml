@@ -1,0 +1,23 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# Allow Contentful CDA tokens in build output
+# These are safe to expose as they are Content Delivery API tokens
+[build.environment]
+  SECRETS_SCAN_OMIT_KEYS = "VITE_CONTENTFUL_SPACE_ID,VITE_CONTENTFUL_ACCESS_TOKEN"
+
+# Optional: Configure build settings
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
