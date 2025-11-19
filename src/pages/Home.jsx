@@ -1,48 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Hero from "../components/Hero";
 import Skills from "../components/Skills";
 import ProjectCard from "../components/ProjectCard";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+import { fetchProjects } from "../services/contentful";
 import "../styles/Home.css";
 
 const Home = () => {
-  // Featured projects data
-  const featuredProjects = [
-    {
-      id: 1,
-      title: "Minimalist To-Do List Application",
-      description:
-        "A personal project to build a functional to-do list application. This web app allows users to manage their daily tasks efficiently through an intuitive interface, enabling them to add, modify, and track the completion of their activities.",
-      image: "images/TodoList-1.jpg",
-      technologies: ["React", "Node.js", "MySql", "express"],
-      githubLink: "https://github.com/karanhb-pixel/TODOList.git",
-      liveLink: "https://example.com/",
-      category: "web",
-    },
-    {
-      id: 2,
-      title: "Dynamic Student Record Display",
-      description:
-        "This project implements a dynamic student table using web technologies. It offers a way to display student data in a clean and potentially interactive manner.",
-      image: "images/student_table-1.jpg",
-      technologies: ["React", "Node.js", "PostgreSQL", "Express.js"],
-      githubLink: "https://github.com/karanhb-pixel/Student_table.git",
-      liveLink: "https://student-table-withcrud.netlify.app/",
-      category: "web",
-    },
-    {
-      id: 3,
-      title: "Portfolio Website",
-      description:
-        "A modern, responsive portfolio website template for developers and designers to showcase their work.",
-      image: "/images/portfoliyo-website-1.jpg",
-      technologies: ["HTML5", "CSS3", "JavaScript", "ReactJs"],
-      githubLink: "https://github.com/karanhb-pixel/Portfolio-Website.git",
-      liveLink: "https://karanbhanushali-portfolio.netlify.app/",
-      category: "web",
-    },
-  ];
+  const [featuredProjects, setFeaturedProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadProjects = async () => {
+      try {
+        const projects = await fetchProjects();
+        // Get only the first 3 projects for the featured section
+        setFeaturedProjects(projects.slice(0, 3));
+      } catch (error) {
+        console.error('Error loading featured projects:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadProjects();
+  }, []);
 
   return (
     <>
@@ -54,9 +37,15 @@ const Home = () => {
         <div className="container">
           <h2 className="section-title">Featured Projects</h2>
           <div className="projects-grid">
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
+            {loading ? (
+              <div className="loading-message">Loading projects...</div>
+            ) : featuredProjects.length > 0 ? (
+              featuredProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))
+            ) : (
+              <div className="no-projects-message">No projects found</div>
+            )}
           </div>
           <div className="view-all-projects">
             <Link to="/projects" className="view-all-link">
