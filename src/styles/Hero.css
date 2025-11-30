@@ -68,7 +68,9 @@
 }
 
 .hero-image img {
-  max-width: 70%;
+  /* max-width: 70%; */
+  width: 500px;
+  height: auto;
   /* animation: float 3s ease-in-out infinite; */
 }
 
