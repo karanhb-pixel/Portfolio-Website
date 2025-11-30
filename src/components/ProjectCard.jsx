@@ -1,44 +1,47 @@
 import React from "react";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { PROJECT_LINKS } from "../config/constants";
+import { Link } from "react-router-dom";
+import { FaEye } from "react-icons/fa";
 import "../styles/ProjectCard.css";
 
 const ProjectCard = ({ project }) => {
-  const { title, description, image, technologies, githubLink, liveLink } =
-    project;
+  const { slug, title, subtitle, coverImageUrl, techStack, category } = project;
 
   return (
     <article className="project-card">
-      <div className="project-image">
-        <img src={image} alt={title} />
-      </div>
-      <div className="project-content">
-        <h3 className="project-title">{title}</h3>
-        <p className="project-description">{description}</p>
-        <div className="project-tech">
-          {technologies.map((tech, index) => (
-            <span key={index} className="tech-tag">
-              {tech}
+      <Link to={`/projects/${slug}`} className="project-image-link">
+        <div className="project-image">
+          <img src={coverImageUrl} alt={title} />
+          <div className="project-image-overlay">
+            <span className="view-details-text">View Details</span>
+          </div>
+          {category && (
+            <span className="category-badge">
+              {category.charAt(0).toUpperCase() + category.slice(1)}
             </span>
-          ))}
+          )}
         </div>
+      </Link>
+      <div className="project-content">
+        <Link to={`/projects/${slug}`} className="project-title-link">
+          <h3 className="project-title">{title}</h3>
+        </Link>
+        <p className="project-description">{subtitle}</p>
+        {techStack && techStack.length > 0 && (
+          <div className="project-tech">
+            {techStack.slice(0, 4).map((tech, index) => (
+              <span key={index} className="tech-tag">
+                {tech}
+              </span>
+            ))}
+            {techStack.length > 4 && (
+              <span className="tech-tag more">+{techStack.length - 4}</span>
+            )}
+          </div>
+        )}
         <div className="project-links">
-          <a
-            href={githubLink || PROJECT_LINKS.repository}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-link"
-          >
-            <FaGithub /> Code
-          </a>
-          <a
-            href={liveLink || PROJECT_LINKS.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="project-link"
-          >
-            <FaExternalLinkAlt /> Live Demo
-          </a>
+          <Link to={`/projects/${slug}`} className="project-link view-details">
+            <FaEye /> View Details
+          </Link>
         </div>
       </div>
     </article>

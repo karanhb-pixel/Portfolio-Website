@@ -1,0 +1,253 @@
+{
+  "projects": [
+    {
+      "id": "4Hz0jeioghJUaZDoNpREjD",
+      "slug": "molla-custom-woocommerce-e-commerce-theme",
+      "title": "Molla – Custom WooCommerce E-commerce Theme",
+      "subtitle": "",
+      "category": "web",
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "PHP",
+        "Wordpress Core api",
+        "WooCommerce Core",
+        "MySQL",
+        "Woocommerce",
+        "Advanced Custom Fields (ACF)"
+      ],
+      "coverImageUrl": "https://images.ctfassets.net/mzr3632kixeu/53FDO6wESqWNAoDhNEAXoS/e53c88bee4a34db34ca298410b298dac/thumnail.png",
+      "overviewHtml": "<p>Molla is a custom e-commerce WordPress theme developed specifically for the WooCommerce platform.The theme was built by converting a static HTML template into a fully dynamic WooCommerce-powered CMS, showcasing strong understanding of both:​WordPress Template HierarchyWooCommerce Template Override SystemThe project focuses on clean code, fast performance, and seamless dynamic product integration.No page builders were used — only native WordPress/WooCommerce hooks, PHP, and Pure CSS.</p>",
+      "liveDemoUrl": "https://molla-ecommerce-test.infinityfreeapp.com/",
+      "githubUrl": "https://github.com/karanhb-pixel/Molla---Custom-WooCommerce-E-commerce-Theme.git",
+      "features": [],
+      "plugins": [],
+      "screenshots": []
+    },
+    {
+      "id": "1YZJc096r4Qnij5XQGxX0U",
+      "slug": "easyblog-custom-wordpress-theme",
+      "title": "EasyBlog – Custom WordPress Theme",
+      "subtitle": "",
+      "category": "web",
+      "techStack": [
+        "PHP ",
+        "HTML5",
+        "CSS3",
+        "WordPress (Custom Theme Development).",
+        "Advanced Custom Fields (ACF)",
+        "Contact Form 7.",
+        "VS Code",
+        "Github"
+      ],
+      "coverImageUrl": "https://images.ctfassets.net/mzr3632kixeu/40couPhYk35sNyoDHcWYDj/b94d107dd1b9815df381488d970f58b7/thunbnail.png",
+      "overviewHtml": "<p>EasyBlog is a custom-developed WordPress theme built to demonstrate mastery of the WordPress Template Hierarchy and PHP development. The project involved converting a static, multi-page HTML/CSS website into a fully dynamic WordPress theme.​Unlike pre-made themes dependent on page builders (Elementor/Divi), this theme relies on Pure CSS and hand-coded PHP templates to ensure maximum performance, semantic markup, and maintainability. It bridges the gap between static design and dynamic content management.</p>",
+      "liveDemoUrl": "https://easyblog.infinityfree.me/",
+      "githubUrl": "https://github.com/karanhb-pixel/EasyBlog-Custom-WordPress-Blog-Theme.git",
+      "features": [],
+      "plugins": [],
+      "screenshots": []
+    },
+    {
+      "id": "3K9900ySumMBohzJqZ4tRu",
+      "slug": "1cable-network-react-vite-headless-wordpress",
+      "title": "1Cable Network - React + Vite (Headless WordPress)",
+      "subtitle": "",
+      "category": "web",
+      "techStack": [
+        "React.js",
+        "Axios",
+        "Formik + Yup",
+        "MySQL",
+        "wordpress"
+      ],
+      "coverImageUrl": "https://images.ctfassets.net/mzr3632kixeu/17T3Qh1We2J4sxfUfjg81i/33cc855e935b9b54b26f2c8b82b9632a/1Cable-Network_HomePage.jpeg",
+      "overviewHtml": "<p>1Cable Network is a headless WordPress application with a React (Vite) frontend for managing WiFi and OTT plans, users, and related workflows. The frontend consumes APIs and emphasizes performance, resilience, and modern UX.</p>",
+      "liveDemoUrl": "https://1cable-network.netlify.app/",
+      "githubUrl": "https://github.com/karanhb-pixel/1cable-network.git",
+      "features": [],
+      "plugins": [],
+      "screenshots": []
+    },
+    {
+      "id": "2QhrJ8QmoHDvZDx7Ht898S",
+      "slug": "game-dev-landing-page",
+      "title": "Game Dev Landing Page",
+      "subtitle": "",
+      "category": "web",
+      "techStack": [
+        "React.js",
+        "TypeScript",
+        "Vite",
+        "CSS",
+        "ESlint",
+        "Lazy Loading"
+      ],
+      "coverImageUrl": "https://images.ctfassets.net/mzr3632kixeu/18cDkkJUhixxVTSuWSHhPk/de833934f9a94df88803ea91a876eb05/GameDev_homepage.jpeg",
+      "overviewHtml": "<p>This application is a single-page website designed to promote and enroll users in a comprehensive Game Development course. It features sections including a hero section, course listings, testimonials, app download prompts, and a footer. The site is optimized for performance with lazy loading and includes SEO enhancements like a robots.txt file.</p>",
+      "liveDemoUrl": "https://artgamedev.netlify.app/",
+      "githubUrl": "https://github.com/karanhb-pixel/figmaSite/tree/6e9a4232f88f5f678e8855e7f00ae750de7ed7c1/vite-project",
+      "features": [],
+      "plugins": [],
+      "screenshots": []
+    },
+    {
+      "id": "18qJv3KIu7LDaxyFDEzSm9",
+      "slug": "architectural-and-interior-design-website-custom-wordpress-theme",
+      "title": "Architectural & Interior Design Website (Custom WordPress Theme)",
+      "subtitle": "",
+      "category": "web",
+      "techStack": [
+        "Wordpress",
+        "PHP",
+        "InfinityFree hosting",
+        "XAMPP",
+        "Shortcodes",
+        "JavaScript",
+        "Bootstrapt",
+        "ACF Pro, Custom Post Type, Custom Fields",
+        "MySQL"
+      ],
+      "coverImageUrl": "https://images.ctfassets.net/mzr3632kixeu/4MGZ2PO3b0NFVTEgPrPf0u/11f1be8143b49a8390f18cd6f353e6fe/thunbnail.png",
+      "overviewHtml": "<p>I converted a static HTML template into a fully dynamic WordPress theme for an architectural and interior design brand. The site content is fully manageable from the WordPress admin using custom fields and a custom post type for projects.</p>",
+      "liveDemoUrl": "https://contra-interior-creator.infinityfreeapp.com/",
+      "githubUrl": "https://github.com/karanhb-pixel/Contra-Interior-Custom-WordPress-Theme.git",
+      "features": [],
+      "plugins": [],
+      "screenshots": []
+    },
+    {
+      "id": "V6qDmZCvLk4WiuIijoFGf",
+      "slug": "next-js-dashboard-application",
+      "title": "Next.js Dashboard Application",
+      "subtitle": "",
+      "category": "web",
+      "techStack": [
+        "Next.Js",
+        "Tailwind CSS",
+        "NextAuth.js",
+        "PostgreSQl"
+      ],
+      "coverImageUrl": "https://images.ctfassets.net/mzr3632kixeu/HBKerob5b9bRv2hT1qWVV/6f2d6eab71bd3ba476f68538e6ab88d2/nextjs-dashboard.jpg",
+      "overviewHtml": "<p>A modern, full-stack dashboard application built with Next.js 14, featuring authentication, database integration, and real-time data visualization.</p>",
+      "liveDemoUrl": "https://nextjs-dashboard-nine-kappa-38.vercel.app/",
+      "githubUrl": "https://github.com/karanhb-pixel/nextjs-dashboard.git",
+      "features": [],
+      "plugins": [],
+      "screenshots": []
+    },
+    {
+      "id": "15OOcNgpDKeUMW5Kryk14D",
+      "slug": "portfolio-website",
+      "title": "Portfolio Website",
+      "subtitle": "",
+      "category": "web",
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "React.js"
+      ],
+      "coverImageUrl": "https://images.ctfassets.net/mzr3632kixeu/3fCqNxcxS60aOVJ36CuyjT/5cc6edd1c0eaa2e8ca659bc635e45cdc/portfoliyo-website-1.jpg",
+      "overviewHtml": "<p>A modern, responsive portfolio website template for developers and designers to showcase their work.</p>",
+      "liveDemoUrl": "https://karanbhanushali-portfolio-cms.netlify.app/",
+      "githubUrl": "https://github.com/karanhb-pixel/Portfolio-Website.git",
+      "features": [],
+      "plugins": [],
+      "screenshots": []
+    },
+    {
+      "id": "6xsoyVukNY5I5XN5dsNzXL",
+      "slug": "dynamic-student-record-display",
+      "title": "Dynamic Student Record Display",
+      "subtitle": "",
+      "category": "web",
+      "techStack": [
+        "React",
+        "Node.js",
+        "PostgreSQL",
+        "Express.js"
+      ],
+      "coverImageUrl": "https://images.ctfassets.net/mzr3632kixeu/68m7uAqUKupGVMvkuIiSK2/4dd61d37fb55587df516aadf75263d16/student_table-1.jpg",
+      "overviewHtml": "<p>This project implements a dynamic student table using web technologies. It offers a way to display student data in a clean and potentially interactive manner.</p>",
+      "liveDemoUrl": "https://student-table-withcrud.netlify.app/",
+      "githubUrl": "https://github.com/karanhb-pixel/Student_table.git",
+      "features": [],
+      "plugins": [],
+      "screenshots": []
+    },
+    {
+      "id": "7cMq3Ljv2DSRlw8NzIvP9o",
+      "slug": "minimalist-to-do-list-application",
+      "title": "Minimalist To-Do List Application",
+      "subtitle": "A personal project to build a functional to-do list application. This web app allows users to manage their daily tasks efficiently through an intuitive interface, enabling them to add, modify, and track the completion of their activities.",
+      "category": "web",
+      "techStack": [
+        "React",
+        "Node.js",
+        "MySql",
+        "Express.js"
+      ],
+      "coverImageUrl": "https://images.ctfassets.net/mzr3632kixeu/5ApmWSzMofCvo61IBddEdo/6f1d33974cfc6537f39c4b490e1d31e8/TodoList-1.jpg",
+      "overviewHtml": "<p>A personal project to build a functional to-do list application. This web app allows users to manage their daily tasks efficiently through an intuitive interface, enabling them to add, modify, and track the completion of their activities.</p>",
+      "liveDemoUrl": "https://example.com/",
+      "githubUrl": "https://github.com/karanhb-pixel/TODOList.git",
+      "features": [],
+      "plugins": [],
+      "screenshots": []
+    }
+  ],
+  "skills": [
+    {
+      "name": "CSS3",
+      "icon": "FaCss3Alt",
+      "category": "frontend"
+    },
+    {
+      "name": "Figma",
+      "icon": "SiFigma",
+      "category": "design"
+    },
+    {
+      "name": "Git",
+      "icon": "FaGitAlt",
+      "category": "tools"
+    },
+    {
+      "name": "HTML5",
+      "icon": "FaHtml5",
+      "category": "frontend"
+    },
+    {
+      "name": "JavaScript",
+      "icon": "FaJs",
+      "category": "frontend"
+    },
+    {
+      "name": "Node.js",
+      "icon": "FaNodeJs",
+      "category": "backend"
+    },
+    {
+      "name": "React",
+      "icon": "FaReact",
+      "category": "frontend"
+    }
+  ],
+  "personalInfo": {
+    "name": "Karan Bhanushali",
+    "role": "Frontend Developer & UI/UX Designer",
+    "location": "Navsari, India",
+    "email": "karan.9924304045@gmail.com",
+    "socialLinks": {
+      "email": "karan.9924304045@gmail.com",
+      "github": "https://github.com/karanhb-pixel",
+      "twitter": "https://twitter.com/karanbhanushali",
+      "linkedin": "https://www.linkedin.com/in/karan-bhanushali/"
+    },
+    "projectLinks": {
+      "repository": "https://github.com/karanhb-pixel/portfolio",
+      "live": "https://karanbhanushali.dev"
+    }
+  }
+}

@@ -1,0 +1,466 @@
+/* ProjectSingle Page Styles */
+
+.project-single-page {
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Loading State */
+.project-single-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+}
+
+.project-single-loading .loading-content {
+  text-align: center;
+}
+
+.project-single-loading .spinner {
+  width: 64px;
+  height: 64px;
+  border: 4px solid transparent;
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.project-single-loading p {
+  color: var(--secondary-color);
+  font-size: 1.125rem;
+}
+
+/* Error State */
+.project-single-error {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  padding: 2rem;
+}
+
+.project-single-error .error-content {
+  text-align: center;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.project-single-error .error-icon {
+  font-size: 4rem;
+  color: #ef4444;
+  margin-bottom: 1rem;
+}
+
+.project-single-error h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.project-single-error p {
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+.project-single-error .btn-back {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.project-single-error .btn-back:hover {
+  background-color: #3b82f6;
+}
+
+/* Not Found State */
+.project-single-not-found {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-color);
+  padding: 2rem;
+}
+
+.project-single-not-found .not-found-content {
+  text-align: center;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.project-single-not-found .not-found-icon {
+  font-size: 4rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+}
+
+.project-single-not-found h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.project-single-not-found p {
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+}
+
+.project-single-not-found .btn-browse {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.project-single-not-found .btn-browse:hover {
+  background-color: #3b82f6;
+}
+
+/* Hero Section */
+.project-hero {
+  position: relative;
+}
+
+.project-hero-image {
+  width: 100%;
+  height: 16rem;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .project-hero-image {
+    height: 24rem;
+  }
+}
+
+.project-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.project-hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .project-hero-content {
+    padding: 3rem;
+  }
+}
+
+.project-hero-inner {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.project-hero-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .project-hero-title {
+    font-size: 3rem;
+  }
+}
+
+.project-hero-subtitle {
+  font-size: 1.125rem;
+  color: #e5e7eb;
+}
+
+@media (min-width: 768px) {
+  .project-hero-subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* Main Content */
+.project-single-main {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+/* Action Buttons */
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.btn-demo,
+.btn-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-demo {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.btn-demo:hover {
+  background-color: #2563eb;
+}
+
+.btn-github {
+  background-color: #1f2937;
+  color: white;
+}
+
+.btn-github:hover {
+  background-color: #374151;
+}
+
+.btn-demo svg,
+.btn-github svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Section Styles */
+.project-section {
+  margin-bottom: 3rem;
+}
+
+.project-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.project-section-content {
+  color: var(--secondary-color);
+}
+
+/* Overview Section */
+.project-overview {
+  color: var(--secondary-color);
+  line-height: 1.75;
+}
+
+.project-overview h1,
+.project-overview h2,
+.project-overview h3,
+.project-overview h4,
+.project-overview h5,
+.project-overview h6 {
+  color: var(--text-color);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-overview p {
+  margin-bottom: 1rem;
+}
+
+.project-overview a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.project-overview ul,
+.project-overview ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-overview li {
+  margin-bottom: 0.5rem;
+}
+
+/* Features Section */
+.features-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .features-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: var(--secondary-color);
+}
+
+.feature-item svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #10b981;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+/* Tech Stack & Plugins */
+.tech-tags,
+.plugin-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag,
+.plugin-tag {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.tech-tag {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.dark .tech-tag {
+  background-color: #1e3a8a;
+  color: #bfdbfe;
+}
+
+.plugin-tag {
+  background-color: #f3e8ff;
+  color: #7e22ce;
+}
+
+.dark .plugin-tag {
+  background-color: #581c87;
+  color: #e9d5ff;
+}
+
+/* Screenshots Gallery */
+.screenshots-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .screenshots-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.screenshot-item {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  background-color: var(--card-bg);
+}
+
+.screenshot-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.screenshot-caption {
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: var(--secondary-color);
+}
+
+/* Back Link */
+.project-back-link {
+  border-top: 1px solid var(--border-color);
+  padding-top: 2rem;
+}
+
+.project-back-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-back-link a:hover {
+  color: #2563eb;
+}
+
+.project-back-link svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .project-hero-image {
+    height: 12rem;
+  }
+  
+  .project-hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .project-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .project-single-main {
+    padding: 2rem 1rem;
+  }
+  
+  .project-actions {
+    gap: 0.75rem;
+  }
+  
+  .btn-demo,
+  .btn-github {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}

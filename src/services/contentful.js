@@ -1,4 +1,5 @@
 import { createClient } from 'contentful';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 // Validate environment variables
 const spaceId = import.meta.env.VITE_CONTENTFUL_SPACE_ID;
@@ -19,66 +20,77 @@ export const isContentfulConfigured = () => {
   return spaceId && accessToken && spaceId !== 'placeholder-space-id';
 };
 
+// Helper function to safely get asset URL
+const getAssetUrl = (asset) => {
+  if (!asset || !asset.fields || !asset.fields.file) return null;
+  const url = asset.fields.file.url;
+  return url.startsWith('//') ? `https:${url}` : url;
+};
+
+// Helper function to get asset details
+const getAssetDetails = (asset) => {
+  if (!asset || !asset.fields) return null;
+  return {
+    url: getAssetUrl(asset),
+    alt: asset.fields.title || '',
+    caption: asset.fields.description || '',
+  };
+};
+
 // Fallback data for when Contentful is not available
 export const FALLBACK_PROJECTS = [
   {
     id: '1',
+    slug: 'minimalist-todo-list-application',
     title: 'Minimalist To-Do List Application',
-    description: 'A personal project to build a functional to-do list application. This web app allows users to manage their daily tasks efficiently through an intuitive interface, enabling them to add, modify, and track the completion of their activities.',
-    image: '/images/TodoList-1.jpg',
-    technologies: ['React', 'Node.js', 'MySql', 'Express.js'],
-    githubLink: 'https://github.com/karanhb-pixel/TODOList.git',
-    liveLink: 'https://example.com/',
+    subtitle: 'A personal project to build a functional to-do list application',
+    coverImageUrl: '/images/TodoList-1.jpg',
+    techStack: ['React', 'Node.js', 'MySql', 'Express.js'],
     category: 'web',
   },
   {
     id: '2',
+    slug: 'dynamic-student-record-display',
     title: 'Dynamic Student Record Display',
-    description: 'This project implements a dynamic student table using web technologies. It offers a way to display student data in a clean and potentially interactive manner.',
-    image: '/images/student_table-1.jpg',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'Express.js'],
-    githubLink: 'https://github.com/karanhb-pixel/Student_table.git',
-    liveLink: 'https://student-table-withcrud.netlify.app/',
+    subtitle: 'This project implements a dynamic student table using web technologies',
+    coverImageUrl: '/images/student_table-1.jpg',
+    techStack: ['React', 'Node.js', 'PostgreSQL', 'Express.js'],
     category: 'web',
   },
   {
     id: '3',
+    slug: 'portfolio-website',
     title: 'Portfolio Website',
-    description: 'A modern, responsive portfolio website template for developers and designers to showcase their work.',
-    image: '/images/portfoliyo-website-1.jpg',
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'ReactJs'],
-    githubLink: 'https://github.com/karanhb-pixel/Portfolio-Website.git',
-    liveLink: 'https://karanbhanushali-portfolio.netlify.app/',
+    subtitle: 'A modern, responsive portfolio website template',
+    coverImageUrl: '/images/portfoliyo-website-1.jpg',
+    techStack: ['HTML5', 'CSS3', 'JavaScript', 'ReactJs'],
     category: 'web',
   },
   {
     id: '4',
+    slug: 'nextjs-dashboard-application',
     title: 'Next.js Dashboard Application',
-    description: 'A modern, full-stack dashboard application built with Next.js 14, featuring authentication, database integration, and real-time data visualization.',
-    image: '/images/nextjs-dashboard.jpg',
-    technologies: ['NextJs', 'Tailwind CSS', 'NextAuth.js', 'PostgreSQL'],
-    githubLink: 'https://github.com/karanhb-pixel/nextjs-dashboard.git',
-    liveLink: 'https://nextjs-dashboard-nine-kappa-38.vercel.app/',
+    subtitle: 'A modern, full-stack dashboard application with authentication',
+    coverImageUrl: '/images/nextjs-dashboard.jpg',
+    techStack: ['NextJs', 'Tailwind CSS', 'NextAuth.js', 'PostgreSQL'],
     category: 'web',
   },
   {
     id: '5',
+    slug: '1cable-network-react-vite',
     title: '1Cable Network - React + Vite (Headless WordPress)',
-    description: '1Cable Network is a headless WordPress application with a React (Vite) frontend for managing WiFi and OTT plans, users, and related workflows. The frontend consumes APIs and emphasizes performance, resilience, and modern UX.',
-    image: '/images/1Cable-Network_HomePage.jpeg',
-    technologies: ['ReactJs', 'Axios', 'Formik + Yup', 'Mysql', 'Wordpress'],
-    githubLink: 'https://github.com/karanhb-pixel/1cable-network.git',
-    liveLink: 'http://1cable-network.infy.uk',
+    subtitle: 'Headless WordPress with React frontend for WiFi and OTT plans',
+    coverImageUrl: '/images/1Cable-Network_HomePage.jpeg',
+    techStack: ['ReactJs', 'Axios', 'Formik + Yup', 'Mysql', 'Wordpress'],
     category: 'web',
   },
   {
     id: '6',
+    slug: 'game-dev-landing-page',
     title: 'Game Dev Landing Page',
-    description: 'This application is a single-page website designed to promote and enroll users in a comprehensive Game Development course. It features sections including a hero section, course listings, testimonials, app download prompts, and a footer.',
-    image: '/images/GameDev_homepage.jpeg',
-    technologies: ['ReactJs', 'TypeScript', 'Vite', 'CSS(with Custom Styles)', 'ESLint', 'Lazy Loading'],
-    githubLink: 'https://github.com/karanhb-pixel/figmaSite/tree/6e9a4232f88f5f678e8855e7f00ae750de7ed7c1/vite-project',
-    liveLink: 'http://1cable-network.infy.uk',
+    subtitle: 'Single-page website for Game Development course promotion',
+    coverImageUrl: '/images/GameDev_homepage.jpeg',
+    techStack: ['ReactJs', 'TypeScript', 'Vite', 'CSS', 'ESLint'],
     category: 'web',
   },
 ];
@@ -105,10 +117,10 @@ export const fetchProjects = async () => {
     // First check if the content type exists by fetching content types
     try {
       const contentTypes = await client.getContentTypes();
-      const portfolioContentType = contentTypes.items.find(ct => ct.sys.id === 'portfolio');
+      const projectSingleContentType = contentTypes.items.find(ct => ct.sys.id === 'projectSingle');
       
-      if (!portfolioContentType) {
-        console.log('Content type "portfolio" not found in Contentful, using fallback data');
+      if (!projectSingleContentType) {
+        console.log('Content type "projectSingle" not found in Contentful, using fallback data');
         return FALLBACK_PROJECTS;
       }
     } catch (ctError) {
@@ -117,28 +129,103 @@ export const fetchProjects = async () => {
     }
 
     const response = await client.getEntries({
-      content_type: 'portfolio',
+      content_type: 'projectSingle',
       order: '-sys.createdAt',
     });
-    return response.items.map(item => ({
-      id: item.sys.id,
-      title: item.fields.title,
-      description: item.fields.description,
-      image: item.fields.image?.fields?.file?.url ? `https:${item.fields.image.fields.file.url}` : '/images/portfoliyo-website-1.jpg',
-      technologies: item.fields.technologies || [],
-      githubLink: item.fields.githubLink || '',
-      liveLink: item.fields.liveLink || '',
-      category: item.fields.category || 'web',
-    }));
+
+    return response.items.map(item => {
+      const fields = item.fields;
+
+      return {
+        id: item.sys.id,
+        title: fields.title,
+        subtitle: fields.subtitle || "",
+        slug: fields.slug,
+        category: fields.category || "web",        // REQUIRED for filtering
+        techStack: fields.techStack || [],
+        coverImageUrl: fields.coverImage?.fields?.file?.url
+          ? "https:" + fields.coverImage.fields.file.url
+          : '/images/portfoliyo-website-1.jpg',
+      };
+    });
   } catch (error) {
     // Check if it's specifically the unknown content type error
     if (error.message && error.message.includes('unknownContentType')) {
-      console.log('Content type "portfolio" does not exist in Contentful, using fallback data');
+      console.log('Content type "projectSingle" does not exist in Contentful, using fallback data');
     } else {
       console.error('Error fetching projects from Contentful:', error);
     }
     console.log('Falling back to local projects data');
     return FALLBACK_PROJECTS;
+  }
+};
+
+// Fetch single project by slug for project detail page
+export const fetchProjectBySlug = async (slug) => {
+  try {
+    // Check if Contentful is properly configured
+    if (!isContentfulConfigured()) {
+      console.log('Using fallback projects data for project lookup');
+      // Find project in fallback data by slug
+      const project = FALLBACK_PROJECTS.find(p => p.slug === slug);
+      if (!project) {
+        return null;
+      }
+      // Map fallback project to projectSingle format with minimal fallback data
+      return {
+        title: project.title,
+        subtitle: project.subtitle,
+        coverImageUrl: project.coverImageUrl,
+        overviewHtml: `<p>${project.subtitle}</p><p>This is a project built with ${project.techStack.join(', ')}.</p>`,
+        liveDemoUrl: '',
+        githubUrl: '',
+        features: ['Built with ' + project.techStack.join(', ')],
+        techStack: project.techStack,
+        plugins: [],
+        screenshots: [],
+      };
+    }
+
+    const response = await client.getEntries({
+      content_type: 'projectSingle',
+      'fields.slug': slug,
+      limit: 1,
+    });
+
+    if (response.items.length === 0) {
+      return null;
+    }
+
+    const entry = response.items[0];
+    const fields = entry.fields;
+
+    // Map screenshots array
+    const screenshotsArray = fields.screenshots || [];
+    const mappedScreenshots = screenshotsArray
+      .map((screenshot) => getAssetDetails(screenshot))
+      .filter((item) => item !== null && item.url !== null);
+
+    // Convert rich text to HTML
+    const overviewHtml = fields.overview
+      ? documentToHtmlString(fields.overview)
+      : '';
+
+    // Build and return the mapped project object
+    return {
+      title: fields.title || '',
+      subtitle: fields.subtitle || '',
+      coverImageUrl: getAssetUrl(fields.coverImage),
+      overviewHtml: overviewHtml,
+      liveDemoUrl: fields.liveDemoUrl || '',
+      githubUrl: fields.githubUrl || '',
+      features: fields.features || [],
+      techStack: fields.techStack || [],
+      plugins: fields.plugins || [],
+      screenshots: mappedScreenshots,
+    };
+  } catch (error) {
+    console.error('Error fetching project by slug:', error);
+    return null;
   }
 };
 
