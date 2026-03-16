@@ -23,19 +23,31 @@ const CursorFollower = () => {
 
     window.addEventListener("mousemove", handleMouseMove);
 
-    // Attach listeners to all buttons and links
-    const targets = document.querySelectorAll("button, a, .btn");
-    targets.forEach((target) => {
-      target.addEventListener("mouseenter", handleMouseEnter);
-      target.addEventListener("mouseleave", handleMouseLeave);
-    });
+    // Event delegation for dynamic elements
+    const handleMouseOver = (e) => {
+      const target = e.target.closest("button, a, .btn");
+      if (target) {
+        handleMouseEnter();
+      }
+    };
+
+    const handleMouseOut = (e) => {
+      const target = e.target.closest("button, a, .btn");
+      const relatedTarget = e.relatedTarget?.closest("button, a, .btn");
+
+      // Only trigger leave if we're moving to a different target or outside any target
+      if (target && target !== relatedTarget) {
+        handleMouseLeave();
+      }
+    };
+
+    document.addEventListener("mouseover", handleMouseOver);
+    document.addEventListener("mouseout", handleMouseOut);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      targets.forEach((target) => {
-        target.removeEventListener("mouseenter", handleMouseEnter);
-        target.removeEventListener("mouseleave", handleMouseLeave);
-      });
+      document.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("mouseout", handleMouseOut);
     };
   });
 

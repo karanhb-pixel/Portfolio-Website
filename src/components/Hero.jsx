@@ -38,7 +38,8 @@ const Hero = () => {
           <img
             src="/images/hero-image.webp"
             alt="Developer illustration"
-            priority
+            loading="eager"
+            fetchpriority="high"
           />
         </div>
       </div>

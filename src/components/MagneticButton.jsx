@@ -7,14 +7,16 @@ const MagneticButton = ({ children }) => {
 
   useGSAP(
     () => {
+      const el = magneticArea.current;
+      if (!el) return;
+
       // quickSetter is used for 60fps performance
-      const xTo = gsap.quickSetter(magneticArea.current, "x", "px");
-      const yTo = gsap.quickSetter(magneticArea.current, "y", "px");
+      const xTo = gsap.quickSetter(el, "x", "px");
+      const yTo = gsap.quickSetter(el, "y", "px");
 
       const handleMouseMove = (e) => {
         const { clientX, clientY } = e;
-        const { height, width, left, top } =
-          magneticArea.current.getBoundingClientRect();
+        const { height, width, left, top } = el.getBoundingClientRect();
 
         // Calculate distance from center
         const x = (clientX - (left + width / 2)) * 0.35;
@@ -26,7 +28,7 @@ const MagneticButton = ({ children }) => {
 
       const handleMouseLeave = () => {
         // Smooth snap back using elastic ease
-        gsap.to(magneticArea.current, {
+        gsap.to(el, {
           x: 0,
           y: 0,
           duration: 1,
@@ -34,16 +36,13 @@ const MagneticButton = ({ children }) => {
         });
       };
 
-      magneticArea.current.addEventListener("mousemove", handleMouseMove);
-      magneticArea.current.addEventListener("mouseleave", handleMouseLeave);
+      el.addEventListener("mousemove", handleMouseMove);
+      el.addEventListener("mouseleave", handleMouseLeave);
 
       return () => {
         // Clean up listeners to prevent memory leaks
-        magneticArea.current?.removeEventListener("mousemove", handleMouseMove);
-        magneticArea.current?.removeEventListener(
-          "mouseleave",
-          handleMouseLeave,
-        );
+        el.removeEventListener("mousemove", handleMouseMove);
+        el.removeEventListener("mouseleave", handleMouseLeave);
       };
     },
     { scope: magneticArea },
