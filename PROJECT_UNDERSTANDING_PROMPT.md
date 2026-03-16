@@ -46,7 +46,7 @@ You are analyzing a personal portfolio website project. Here are the key details
    - Add Contentful Space ID and Access Token
    - Set up content types in Contentful (project, skill, personalInfo) as per CONTENTFUL_SETUP.md
    - Migrate sample data (provided in CONTENTFUL_SETUP.md)
-4. Start development server with `npm run dev` (or `npm start` as per README, but package.json shows vite scripts)
+4. Start development server with `npm run dev` (or `npm start` as both are now available in package.json)
 
 ## Contentful CMS Integration
 

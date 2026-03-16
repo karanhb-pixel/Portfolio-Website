@@ -32,8 +32,14 @@ const CursorFollower = () => {
     };
 
     const handleMouseOut = (e) => {
-      const target = e.target.closest("button, a, .btn");
-      const relatedTarget = e.relatedTarget?.closest("button, a, .btn");
+      const target =
+        e.target instanceof Element
+          ? e.target.closest("button, a, .btn")
+          : null;
+      const relatedTarget =
+        e.relatedTarget instanceof Element
+          ? e.relatedTarget.closest("button, a, .btn")
+          : null;
 
       // Only trigger leave if we're moving to a different target or outside any target
       if (target && target !== relatedTarget) {
@@ -49,7 +55,7 @@ const CursorFollower = () => {
       document.removeEventListener("mouseover", handleMouseOver);
       document.removeEventListener("mouseout", handleMouseOut);
     };
-  });
+  }, []);
 
   return <div ref={followerRef} className="cursor-follower" />;
 };

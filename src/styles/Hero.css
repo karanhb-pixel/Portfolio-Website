@@ -5,17 +5,7 @@
   overflow: hidden;
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background-color: rgba(74, 108, 247, 0.05);
-  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
-  z-index: 0;
-}
+
 
 .hero-container {
   display: grid;
@@ -86,6 +76,20 @@
 .hero-location svg {
   color: var(--primary-color);
   font-size: 1rem;
+}
+
+/* Replace the .hero::before with a real div class */
+.hero-bg-shape {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-color: rgba(74, 108, 247, 0.05);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  z-index: 0;
+  pointer-events: none;
+  /* So it doesn't block mouse detection */
 }
 
 @keyframes float {
