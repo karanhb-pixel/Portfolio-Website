@@ -8,12 +8,14 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import ProjectSingle from "./pages/project-single";
 import Contact from "./pages/Contact";
+import CursorFollower from "./components/CursorFollower";
 import "./styles/App.css";
 
 function App() {
   return (
     <ThemeProvider>
       <div className="app">
+        <CursorFollower />
         <Header />
         <main className="main-content">
           <Routes>

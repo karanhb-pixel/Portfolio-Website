@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { PORTFOLIO_CONFIG } from "../config/constants";
+import MagneticButton from "./MagneticButton";
 import "../styles/Hero.css";
 
 const Hero = () => {
@@ -21,16 +22,24 @@ const Hero = () => {
             application development.
           </p>
           <div className="hero-buttons">
-            <Link to="/projects" className="btn btn-primary">
-              View My Work
-            </Link>
-            <Link to="/contact" className="btn btn-outline">
-              Contact Me
-            </Link>
+            <MagneticButton>
+              <Link to="/projects" className="btn btn-primary">
+                View My Work
+              </Link>
+            </MagneticButton>
+            <MagneticButton>
+              <Link to="/contact" className="btn btn-outline">
+                Contact Me
+              </Link>
+            </MagneticButton>
           </div>
         </div>
         <div className="hero-image">
-          <img src="/images/hero-image.webp" alt="Developer illustration" priority/>
+          <img
+            src="/images/hero-image.webp"
+            alt="Developer illustration"
+            priority
+          />
         </div>
       </div>
     </section>

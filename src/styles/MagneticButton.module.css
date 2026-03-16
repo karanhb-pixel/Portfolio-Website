@@ -1,0 +1,13 @@
+.magneticField {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    /* This is your "magnetic radius" */
+    cursor: pointer;
+}
+
+.button {
+    transition: transform 0.1s ease-out;
+    /* Fallback for non-GSAP interactions */
+}

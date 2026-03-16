@@ -1,6 +1,7 @@
 import React from "react";
 import { FaDownload, FaUserGraduate } from "react-icons/fa";
 import "../styles/About.css";
+import MagneticButton from "../components/MagneticButton";
 
 const About = () => {
   const education = [
@@ -30,13 +31,15 @@ const About = () => {
                 web application development. I prioritize clean, efficient code
                 and am always looking to learn and improve.
               </p>
-              <a
-                href="/resume.pdf"
-                download
-                className="btn btn-primary resume-btn"
-              >
-                <FaDownload /> Download Resume
-              </a>
+              <MagneticButton>
+                <a
+                  href="/resume.pdf"
+                  download
+                  className="btn btn-primary resume-btn"
+                >
+                  <FaDownload /> Download Resume
+                </a>
+              </MagneticButton>
             </div>
           </div>
         </div>

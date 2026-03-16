@@ -57,7 +57,7 @@
 
 .hero-buttons {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   margin-top: 1rem;
 }
 
@@ -92,9 +92,11 @@
   0% {
     transform: translateY(0px);
   }
+
   50% {
     transform: translateY(-20px);
   }
+
   100% {
     transform: translateY(0px);
   }
