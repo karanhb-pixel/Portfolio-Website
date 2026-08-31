@@ -6,6 +6,8 @@ import {
   FaReact,
   FaNodeJs,
   FaGitAlt,
+  FaWordpress,
+  FaElementor
 } from "react-icons/fa";
 import { SiFigma } from "react-icons/si";
 import { fetchSkills } from "../services/contentful";
@@ -21,6 +23,8 @@ const iconMap = {
   FaNodeJs: <FaNodeJs />,
   FaGitAlt: <FaGitAlt />,
   SiFigma: <SiFigma />,
+  FaWordpress : <FaWordpress />,
+  FaElementor: <FaElementor />
 };
 
 const Skills = () => {
