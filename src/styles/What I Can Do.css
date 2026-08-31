@@ -1,0 +1,140 @@
+/* ==========================================
+   WHAT I CAN DO SECTION
+   ========================================== */
+
+/* Overriding global center text on title for standard section styling consistency */
+.section-title.left-aligned {
+  text-align: left;
+  margin-bottom: 0.5rem; /* Tight spacing above intro string */
+  color: var(--text-color);
+}
+
+.section-title .highlight-text {
+  color: var(--primary-color);
+}
+
+.section-intro {
+  font-family: var(--font-primary);
+  color: var(--secondary-color);
+  max-width: 700px;
+  margin-bottom: 3rem; /* Spacious margin before grid block */
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* Services Dynamic Auto-Grid Layout */
+.services-grid {
+  display: grid;
+  /* Utilizes your structural 300px minmax logic to automatically split rows correctly */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Card Element Architecture */
+.service-card {
+  background-color: var(--card-bg);
+  border-radius: 8px; /* Strict match to existing card asset radius rules */
+  box-shadow: 0 5px 15px var(--shadow-color);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative; /* REQUIRED: Anchor point for the blue bottom border strip */
+  overflow: hidden;   /* REQUIRED: Clips the inner blue strip corners to your 8px border-radius */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* The solid blue accent layer peeking below the card */
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px; /* Adjust thickness of the bottom stripe here */
+  background-color: var(--primary-color); /* Uses your bright royal blue variable */
+  transform: scaleX(1); /* Keeps it visible by default */
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+/* Interactive Hover State */
+.service-card:hover {
+  transform: translateY(-6px); /* Lifts the card slightly up */
+  box-shadow: 0 12px 24px var(--shadow-color); /* Deepens standard shadow */
+}
+
+/* Optional Hover Interaction: expands thickness slightly to highlight active layout selection */
+.service-card:hover::after {
+  height: 8px; 
+}
+
+/* Card Components Styling */
+.service-card .card-icon {
+  color: var(--primary-color);
+  font-size: 1.75rem; /* Clean, balanced size constraint */
+  margin-bottom: 1.25rem;
+}
+
+.service-card .card-title {
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.service-card .card-description {
+  font-family: var(--font-primary);
+  color: var(--secondary-color);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==========================================
+   RESPONSIVE OVERRIDES (Breakpoints aligned with existing framework)
+   ========================================== */
+@media (max-width: 768px) {
+  .section-title.left-aligned {
+    text-align: center; /* Optionally aligns sections back on mobile screens */
+  }
+  .section-intro {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+  }
+}
+
+/* ==========================================
+   SCROLL INTERSECTION ANIMATIONS
+   ========================================== */
+.what-i-can-do .section-title,
+.what-i-can-do .section-intro,
+.what-i-can-do .service-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: opacity, transform;
+}
+
+.what-i-can-do .service-card {
+  transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+              transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+              box-shadow 0.3s ease;
+}
+
+.what-i-can-do.is-visible .section-title,
+.what-i-can-do.is-visible .section-intro,
+.what-i-can-do.is-visible .service-card {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.what-i-can-do.is-visible .service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px var(--shadow-color);
+}

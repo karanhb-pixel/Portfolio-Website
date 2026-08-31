@@ -9,7 +9,7 @@ import {
   FaWordpress,
   FaElementor
 } from "react-icons/fa";
-import { SiFigma } from "react-icons/si";
+import { SiFigma,SiWoocommerce } from "react-icons/si";
 import { fetchSkills } from "../services/contentful";
 import { useGSAP } from "@gsap/react"; // Import useGSAP
 import gsap from "gsap";
@@ -24,7 +24,8 @@ const iconMap = {
   FaGitAlt: <FaGitAlt />,
   SiFigma: <SiFigma />,
   FaWordpress : <FaWordpress />,
-  FaElementor: <FaElementor />
+  FaElementor: <FaElementor />,
+  SiWoocommerce: <SiWoocommerce />
 };
 
 const Skills = () => {
@@ -90,7 +91,7 @@ const Skills = () => {
   return (
     <section className="skills section" ref={container}>
       <div className="container">
-        <h2 className="section-title">My Skills</h2>
+        <h2 className="section-title">My Expertise</h2>
         <div className="skills-container">
           {skills.map((skill, index) => (
             <div className="skill-card" key={index}>

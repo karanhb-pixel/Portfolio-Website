@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Hero from "../components/Hero";
 import Skills from "../components/Skills";
 import ProjectCard from "../components/ProjectCard";
+import WhatICanDo from "../components/What I Can Do";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 import { fetchProjects } from "../services/contentful";
@@ -32,6 +33,8 @@ const Home = () => {
       <Hero />
 
       <Skills />
+
+      <WhatICanDo />
 
       <section className="featured-projects section">
         <div className="container">
