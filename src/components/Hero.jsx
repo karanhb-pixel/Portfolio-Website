@@ -57,8 +57,7 @@ const Hero = () => {
             <FaMapMarkerAlt /> {PORTFOLIO_CONFIG.location}
           </p>
           <p className="hero-description">
-            React.js, CSS, and fundamental database knowledge for web
-            application development.
+            I have hands-on experience building and customizing responsive WordPress websites with Elementor, HTML, CSS, JavaScript, and WooCommerce.
           </p>
           <div className="hero-buttons">
             <MagneticButton>

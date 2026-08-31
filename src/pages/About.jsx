@@ -25,11 +25,7 @@ const About = () => {
             <div className="about-text">
               <h1>About Me</h1>
               <p>
-                I am a developer with a focus on front-end technologies,
-                particularly React.js and CSS. I have a foundational
-                understanding of database concepts and am eager to contribute to
-                web application development. I prioritize clean, efficient code
-                and am always looking to learn and improve.
+                I am a web developer focused on WordPress, Elementor, and frontend development. I have hands-on experience creating and customizing responsive websites using WordPress, Elementor, HTML, CSS, JavaScript, and WooCommerce. I also have experience working with React and modern web technologies, which helps me understand frontend structure, responsive design, and reusable UI components.
               </p>
               <MagneticButton>
                 <a

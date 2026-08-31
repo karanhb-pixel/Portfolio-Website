@@ -1,7 +1,7 @@
 // Fallback data in case Contentful is not available
 export const FALLBACK_PORTFOLIO_CONFIG = {
   name: "Karan Bhanushali",
-  role: "Frontend Developer & UI/UX Designer",
+  role: "WordPress Developer | Elementor | Frontend Development",
   location: "Navsari, India",
   email: "karan.9924304045@gmail.com",
 };
