@@ -135,6 +135,8 @@ export const fetchProjects = async () => {
 
     return response.items.map(item => {
       const fields = item.fields;
+      const tags = item.metadata?.tags || [];
+      const tagIds = tags.map(tag => tag.sys?.id);
 
       return {
         id: item.sys.id,
@@ -143,6 +145,7 @@ export const fetchProjects = async () => {
         slug: fields.slug,
         category: fields.category || "web",        // REQUIRED for filtering
         techStack: fields.techStack || [],
+        tags: tagIds,
         coverImageUrl: fields.coverImage?.fields?.file?.url
           ? "https:" + fields.coverImage.fields.file.url
           : '/images/portfoliyo-website-1.jpg',
@@ -157,6 +160,50 @@ export const fetchProjects = async () => {
     }
     console.log('Falling back to local projects data');
     return FALLBACK_PROJECTS;
+  }
+};
+
+// Fetch only featured projects
+export const fetchFeaturedProjects = async () => {
+  try {
+    if (!isContentfulConfigured()) {
+      console.log('Contentful not configured.');
+      return [];
+    }
+
+    const response = await client.getEntries({
+      content_type: 'projectSingle',
+      order: '-sys.createdAt',
+    });
+
+    const featuredProjects = response.items.filter(item =>
+      item.metadata?.tags?.some(
+        tag => tag.sys?.id === 'featureProjects'
+      )
+    );
+
+    return featuredProjects.map(item => {
+      const fields = item.fields;
+      const tags = item.metadata?.tags || [];
+      const tagIds = tags.map(tag => tag.sys?.id);
+
+      return {
+        id: item.sys.id,
+        title: fields.title,
+        subtitle: fields.subtitle || "",
+        slug: fields.slug,
+        category: fields.category || "web",
+        techStack: fields.techStack || [],
+        tags: tagIds,
+        coverImageUrl: fields.coverImage?.fields?.file?.url
+          ? "https:" + fields.coverImage.fields.file.url
+          : '/images/portfoliyo-website-1.jpg',
+      };
+    });
+
+  } catch (error) {
+    console.error('Error fetching featured projects:', error);
+    return [];
   }
 };
 
@@ -239,7 +286,7 @@ export const fetchSkills = async () => {
 
     const response = await client.getEntries({
       content_type: 'skill',
-      order: 'fields.name',
+      order: 'fields.order',
     });
     return response.items.map(item => ({
       name: item.fields.name,

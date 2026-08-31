@@ -30,7 +30,13 @@ const Projects = () => {
   const filteredProjects =
     filter === "all"
       ? projects
-      : projects.filter((project) => project.category === filter);
+      : filter === "wordpress"
+        ? projects.filter((project) =>
+            project.tags?.includes("wordpress")
+          )
+        : projects.filter((project) =>
+            project.category === filter
+          );
 
   if (loading) {
     return (
@@ -74,6 +80,12 @@ const Projects = () => {
               onClick={() => setFilter("all")}
             >
               All Projects
+            </button>
+            <button
+              className={`filter-btn ${filter === "wordpress" ? "active" : ""}`}
+              onClick={() => setFilter("wordpress")}
+            >
+              WordPress
             </button>
             <button
               className={`filter-btn ${filter === "web" ? "active" : ""}`}

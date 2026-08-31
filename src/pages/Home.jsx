@@ -5,7 +5,7 @@ import ProjectCard from "../components/ProjectCard";
 import WhatICanDo from "../components/What I Can Do";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
-import { fetchProjects } from "../services/contentful";
+import { fetchFeaturedProjects } from "../services/contentful";
 import "../styles/Home.css";
 
 const Home = () => {
@@ -15,8 +15,7 @@ const Home = () => {
   useEffect(() => {
     const loadProjects = async () => {
       try {
-        const projects = await fetchProjects();
-        // Get only the first 3 projects for the featured section
+        const projects = await fetchFeaturedProjects();
         setFeaturedProjects(projects.slice(0, 3));
       } catch (error) {
         console.error('Error loading featured projects:', error);
