@@ -226,6 +226,8 @@ export const fetchProjectBySlug = async (slug) => {
         overviewHtml: `<p>${project.subtitle}</p><p>This is a project built with ${project.techStack.join(', ')}.</p>`,
         liveDemoUrl: '',
         githubUrl: '',
+        myContribution: '',
+        whatIWorkedOn: [],
         features: ['Built with ' + project.techStack.join(', ')],
         techStack: project.techStack,
         plugins: [],
@@ -265,6 +267,10 @@ export const fetchProjectBySlug = async (slug) => {
       overviewHtml: overviewHtml,
       liveDemoUrl: fields.liveDemoUrl || '',
       githubUrl: fields.githubUrl || '',
+
+      myContribution: fields.myContribution || '',
+      whatIWorkedOn: fields.whatIWorkedOnWhatIWorkedOn || [],
+
       features: fields.features || [],
       techStack: fields.techStack || [],
       plugins: fields.plugins || [],

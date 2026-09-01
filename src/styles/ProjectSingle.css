@@ -464,3 +464,60 @@
     font-size: 0.9rem;
   }
 }
+
+/* Contribution Section */
+.contribution-content {
+  background: #f8f9ff;
+  border-left: 4px solid #4f6df5;
+  padding: 20px 24px;
+  border-radius: 8px;
+}
+
+.contribution-content h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.contribution-content p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.worked-on-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px 40px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.worked-on-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #5f6877;
+  line-height: 1.6;
+}
+
+.worked-on-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: #4f6df5;
+}
+
+@media (max-width: 768px) {
+  .worked-on-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .contribution-content {
+    padding: 18px;
+  }
+}

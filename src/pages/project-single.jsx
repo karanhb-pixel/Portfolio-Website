@@ -164,7 +164,50 @@ const ProjectSingle = () => {
           </section>
         )}
 
-        {/* Features Section */}
+         {/* My Contribution Section */}
+         {project.myContribution && (
+           <section className="project-section">
+             <h2 className="project-section-title">
+               My Contribution
+             </h2>
+
+             <div className="contribution-content">
+               <p>{project.myContribution}</p>
+             </div>
+           </section>
+         )}
+
+         {/* What I Worked On Section */}
+         {project.whatIWorkedOn?.length > 0 && (
+           <section className="project-section">
+             <h2 className="project-section-title">
+               What I Worked On
+             </h2>
+
+             <ul className="worked-on-list">
+               {project.whatIWorkedOn.map((item, index) => (
+                 <li key={index} className="worked-on-item">
+                   <svg
+                     fill="none"
+                     stroke="currentColor"
+                     viewBox="0 0 24 24"
+                   >
+                     <path
+                       strokeLinecap="round"
+                       strokeLinejoin="round"
+                       strokeWidth={2}
+                       d="M5 13l4 4L19 7"
+                     />
+                   </svg>
+
+                   <span>{item}</span>
+                 </li>
+               ))}
+             </ul>
+           </section>
+         )}
+
+         {/* Features Section */}
         {project.features.length > 0 && (
           <section className="project-section">
             <h2 className="project-section-title">
